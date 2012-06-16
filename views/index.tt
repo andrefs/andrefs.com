@@ -148,7 +148,7 @@ $ ./bin/app.pl
 
 	<div class="span3">
 		<h2><i class="icon-road icon-large"></i> Deploy</h2>
-		Try the Dancing <a href="[% request.uri_base %]/deploy">Deployment wizard</a>.
+		Try the Dancing <a href="<% request.uri_base %>/deploy">Deployment wizard</a>.
 
 		<br/>
 		<br/>

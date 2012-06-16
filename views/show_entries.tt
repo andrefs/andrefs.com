@@ -1,0 +1,25 @@
+  <% IF session.logged_in %>
+    <form action="<% add_entry_url %>" method=post class="add-entry well">
+      <dl>
+        <dt>Title:
+        <dd><input type=text size=30 name=title>
+        <dt>Text:
+        <dd><textarea name=text rows=5 cols=40></textarea>
+        <dd><input type=submit value=Share>
+      </dl>
+    </form>
+  <% END %>
+  <ul class=entries>
+  <% IF entries.size %>
+    <% FOREACH post IN entries %>
+		<div class="well">
+      <li><h2><% post.title %></h2>
+	  <h3><% post.author %></h3>
+	  <% post.text %>
+	  </div>
+    <% END %>
+  <% ELSE %>
+    <li><em>Unbelievable.  No entries here so far</em>
+  <% END %>
+  </ul>
+

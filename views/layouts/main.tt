@@ -3,21 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-<meta http-equiv="Content-type" content="text/html; charset=[% settings.charset %]" />
+<meta http-equiv="Content-type" content="text/html; charset=<% settings.charset %>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>dancer_bootstrap_fontawesome_template</title>
+<title>PaperCut</title>
 
-<link rel="stylesheet" href="[% request.uri_base %]/bootstrap/css/bootstrap.css" >
-<link rel="stylesheet" href="[% request.uri_base %]/fontawesome/css/font-awesome.css" >
-<link rel="stylesheet" href="[% request.uri_base %]/css/style.css" >
+<!--link rel="stylesheet" href="<% request.uri_base %>/bootstrap/css/bootstrap.css" -->
+<link rel="stylesheet" href="<% request.uri_base %>/bootstrap/css/bootstrap-responsive.css" >
+<link rel="stylesheet" href="<% request.uri_base %>/fontawesome/css/font-awesome.css" >
+<link rel="stylesheet" href="<% request.uri_base %>/css/style.css" >
 
 </head>
 <body>
 
-[% content %]
+<div class=page>
+  <a href="<% root_url %>"><h1>PaperCut</h1></a>
+  <div class=metanav>
+  <% IF not session.logged_in %>
+    <a href="<% login_url %>">log in</a>
+  <% ELSE %>
+    <a href="<% logout_url %>">log out</a>
+  <% END %>
+  </div>
+  <% IF msg %>
+    <div class=flash> <% msg %> </div>
+  <% END %>
+
+<% content %>
+</div>
 
 <script src="javascripts/jquery-1.7.2.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>

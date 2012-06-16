@@ -3,7 +3,7 @@
 # all the settings in this file will be loaded at Dancer's startup.
 
 # Your application's name
-appname: "dancer_bootstrap_fontawesome_template"
+appname: "papercut"
 
 # The default layout to use for your application (located in
 # views/layouts/main.tt)
@@ -18,6 +18,24 @@ template: "template_toolkit"
 engines:
    template_toolkit:
      encoding:  'utf8'
-     start_tag: '[%'
-     end_tag:   '%]'
+#     start_tag: '[%'
+#     end_tag:   '%]'
 
+
+plugins:
+  DBIC:
+    papercut:
+      dsn:  "dbi:SQLite:dbname=papercut.db"
+  Auth::RBAC:
+    credentials:
+      class: DBIC
+      options:
+        role_name_field: 'rolename'
+
+
+session: "Simple"
+logger: "console"
+log: "debug"
+show_errors: "1"
+access_log: "1"
+warnings: "1"

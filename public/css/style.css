@@ -1,1 +1,129 @@
+.hero-image {
+  overflow: hidden;
+  min-height: 300px; /* 300px is arbitrary. */
+  margin-bottom: 20px;
+}
+.hero-image img {
+  /*width: 100%;*/
+	width: auto;
+    max-width: none;
+    height: 335px;
+	position: relative;
+	left: -100px;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+	        border-radius: 4px;
+}
 
+@media screen and (max-width: 770px) {
+  .hero-image img {
+    width: auto;
+    max-width: none;
+	position: relative;
+	left: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-image img {
+    width: auto;
+    max-width: none;
+    position: relative;
+	left: -50px;
+  }
+}
+
+
+@media screen and (max-width: 350px) {
+  .hero-image img {
+    width: auto;
+    max-width: none;
+    position: relative;
+	left: -100px;
+  }
+}
+
+h1 {
+	font-size: 40px;
+}
+	
+.well {
+  padding: 30px;
+  /*background-color: #eee;*/
+  background: url(/images/bg_green2.png) left top repeat ;
+  min-height: 30px;
+}
+p {
+  line-height: 23px;
+  font-size: 17px;
+}
+
+/*
+@font-face
+{
+    font-family: linden;
+    src: url('/assets/css/fonts/linden.eot');
+    src: local(linden), url('/assets/css/fonts/linden.ttf') format('opentype');
+}
+
+@font-face
+{
+	font-family: gothic;
+	src: url('/assets/css/fonts/gothic.eot');
+	src: local(gothic), url('/assets/css/fonts/gothic.ttf') format('opentype');
+}
+
+@font-face
+{
+	font-family: chunk;
+    src: url('/assets/css/fonts/chunk.eot');
+    src: local(chunk), url('/assets/css/fonts/chunk.otf') format('opentype');
+}
+
+
+h1,h3,p
+{
+    font-family: chunk !important;
+}*/
+
+body {
+	background: url(/images/bg.png) left top repeat ;
+	color: #444;
+}
+
+.alert-info {
+	background: url(/images/bg_info.png) left top repeat ;
+}
+
+.alert-info p {
+	font-size: 13px;
+	line-height: 18px;
+}
+.footer {
+	margin-top: 25px;
+	padding: 5px 0 36px;
+	border-top: 1px solid #cecece;
+}
+.footer p {
+	font-size: 8pt;
+	margin-bottom: 0;
+	color: #999;
+}
+
+.st {
+	text-decoration: line-through;
+}
+
+address {
+	font-size: 13pt;
+	line-height: 25px;
+	margin-left: 20px;
+}
+
+address i {
+	margin-right: 5px;
+}
+
+.hero-unit-title {
+	margin-bottom: 9px;
+}
