@@ -3,7 +3,7 @@
 # all the settings in this file will be loaded at Dancer's startup.
 
 # Your application's name
-appname: "papercut"
+appname: "andrefs.pt"
 
 # The default layout to use for your application (located in
 # views/layouts/main.tt)
@@ -59,3 +59,6 @@ appmenu:
   003_grid:
     text: CV
     value: http://cv.andrefs.pt
+powered_by:
+  text: Dancer
+  value: http://dancer.pm/

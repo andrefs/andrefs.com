@@ -9,8 +9,9 @@ use Dancer::Plugin::FlashNote;
 our $VERSION = '0.1';
 
 hook after_file_render => sub {
-	session appname => config->{appname};
-	session menu 	=> config->{appmenu};
+	session appname 	=> config->{appname};
+	session menu 		=> config->{appmenu};
+	session powered_by 	=> config->{powered_by};
 };
 
 

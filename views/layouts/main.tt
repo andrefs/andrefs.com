@@ -41,6 +41,7 @@
 <div class="container">
 	<% include 'flash.tt' %>
 	<% content %>
+	<% include 'footer.tt' %>
 </div>
 
 <script src="javascripts/jquery-1.7.2.min.js"></script>
