@@ -1,0 +1,28 @@
+<nav class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#"><% session.appname %></a>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<% foreach menu_item in session.menu.keys.sort %>
+						<% if session.menu.$menu_item.status and session.menu.$menu_item.status == 'disabled' %>
+							<li title="Soon!"><a href="<% session.menu.$menu_item.value %>">
+							<span class="st">
+							<% session.menu.$menu_item.text %>
+							</span></a></li>
+						<% else %>
+							<li><a href="<% session.menu.$menu_item.value %>">
+							<% session.menu.$menu_item.text %></a></li>
+						<% end %>
+					<% end %>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
+</nav>
+
