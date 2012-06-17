@@ -14,6 +14,14 @@ before_template sub {
     $tokens->{'logout_url'} = uri_for('/blog/logout');
 };
 
+
+get '/' => sub {
+	
+    template 'home.tt';
+};
+
+
+
 true;
 
 

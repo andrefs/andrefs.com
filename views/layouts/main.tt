@@ -18,21 +18,8 @@
 </head>
 <body>
 
-<div class=page>
-  <a href="<% root_url %>"><h1>PaperCut</h1></a>
-  <div class=metanav>
-  <% IF not session.logged_in %>
-    <a href="<% login_url %>">log in</a>
-  <% ELSE %>
-    <a href="<% logout_url %>">log out</a>
-  <% END %>
-  </div>
-  <% IF msg %>
-    <div class=flash> <% msg %> </div>
-  <% END %>
 
 <% content %>
-</div>
 
 <script src="javascripts/jquery-1.7.2.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>

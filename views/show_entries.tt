@@ -1,3 +1,16 @@
+<div class=page>
+  <a href="<% root_url %>"><h1>PaperCut</h1></a>
+  <div class=metanav>
+  <% IF not session.logged_in %>
+    <a href="<% login_url %>">log in</a>
+  <% ELSE %>
+    <a href="<% logout_url %>">log out</a>
+  <% END %>
+  </div>
+  <% IF msg %>
+    <div class=flash> <% msg %> </div>
+  <% END %>
+
   <% IF session.logged_in %>
     <form action="<% add_entry_url %>" method=post class="add-entry well">
       <dl>
@@ -22,4 +35,4 @@
     <li><em>Unbelievable.  No entries here so far</em>
   <% END %>
   </ul>
-
+</div>
