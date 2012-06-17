@@ -1,0 +1,9 @@
+<div id="twitter-ticker">
+	<div id="top-bar">  
+		<h3>
+			<span>What I have been doing lately:</span>
+		</h3>
+	</div>
+	<div id="tweet-container" title="Loading.."></div>    
+	<span  title="This is a robot version of me which talks mainly about my projects updates." class="pull-right"><i class="icon-twitter icon-large"></i> <a href="http://twitter.com/work_andrefs">@work_andrefs</a></span>
+</div>

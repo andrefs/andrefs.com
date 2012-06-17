@@ -51,7 +51,7 @@
       {
       });
 </script>
-<script type="text/javascript" src="/assets/js/twitter.js"></script>
+<script type="text/javascript" src="/javascripts/twitter.js"></script>
 
 </body>
 </html>

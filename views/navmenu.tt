@@ -6,7 +6,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
-			<a class="brand" href="#"><% session.appname %></a>
+			<a class="brand" href="/"><% session.appname %></a>
 			<div class="nav-collapse">
 				<ul class="nav">
 					<% foreach menu_item in session.menu.keys.sort %>
