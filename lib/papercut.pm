@@ -8,15 +8,11 @@ use Dancer::Plugin::FlashNote;
 
 our $VERSION = '0.1';
 
-hook after_file_render => sub {
+hook before_template => sub {
 	session appname 	=> config->{appname};
 	session menu 		=> config->{appmenu};
 	session powered_by 	=> config->{powered_by};
-};
 
-
-
-hook before_template => sub {
     my $tokens = shift;
     $tokens->{'css_url'} = request->base . 'css/style.css';
     $tokens->{'root_url'} = uri_for('/');

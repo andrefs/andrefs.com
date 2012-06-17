@@ -26,7 +26,7 @@ get '/' => sub {
 		}
 	}
 
-    template 'show_entries.tt', {
+    template 'blog.tt', {
         'add_entry_url' => uri_for('/blog/add'),
         'entries' => $entries,
     };
