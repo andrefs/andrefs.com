@@ -4,7 +4,7 @@ use Dancer ':syntax';
 use Dancer::Plugin::DBIC;
 use Dancer::Plugin::Auth::RBAC;
 use Dancer::Plugin::Auth::RBAC::Credentials::DBIC;
-use Dancer::Plugin::FlashMessage;
+use Dancer::Plugin::FlashNote;
 use Data::Dump qw/pp/;
 
 prefix '/blog';

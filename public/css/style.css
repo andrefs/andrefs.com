@@ -50,7 +50,7 @@ h1 {
 .well {
   padding: 30px;
   /*background-color: #eee;*/
-  background: url(/images/bg_green2.png) left top repeat ;
+  background: url(/img/bg_green2.png) left top repeat ;
   min-height: 30px;
 }
 p {
@@ -87,15 +87,15 @@ h1,h3,p
 }*/
 
 body {
-	background: url(/images/bg.png) left top repeat ;
+	background: url(/img/bg.png) left top repeat ;
 	color: #444;
 }
 
 .alert-info {
-	background: url(/images/bg_info.png) left top repeat ;
+	background: url(/img/bg_info.png) left top repeat ;
 }
 
-.alert-info p {
+.alert p {
 	font-size: 13px;
 	line-height: 18px;
 }

@@ -38,7 +38,10 @@
 <body>
 
 <% include 'navmenu.tt' %>
-<% content %>
+<div class="container">
+	<% include 'flash.tt' %>
+	<% content %>
+</div>
 
 <script src="javascripts/jquery-1.7.2.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>

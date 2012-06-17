@@ -31,6 +31,10 @@ plugins:
       class: DBIC
       options:
         role_name_field: 'rolename'
+  FlashNote:
+    queue: key_multiple
+    dequeue: when_used
+
 
 
 session: "Simple"
