@@ -1,2 +1,2 @@
 #!/bin/sh
-bin/app.pl --daemon --port=$PORT
+bin/app.pl --port=$PORT
