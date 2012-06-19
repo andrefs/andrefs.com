@@ -5,7 +5,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME                => 'papercut',
     AUTHOR              => q{Andre Santos <andrefs@cpan.org>},
-    VERSION_FROM        => 'lib/paper.pm',
+    VERSION_FROM        => 'lib/papercut.pm',
     ABSTRACT            => 'YOUR APPLICATION ABSTRACT',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
       ? ('LICENSE'=> 'perl')
