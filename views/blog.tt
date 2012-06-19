@@ -1,4 +1,28 @@
-<div class="row offset1 span10">
+<div class="row offset2 span8">
+<a href="<% root_url %>"><h1>PaperCut</h1></a>
+  <div class=metanav>
+  <% IF not session.logged_in %>
+    <a href="<% login_url %>">log in</a>
+  <% ELSE %>
+    <a href="<% logout_url %>">log out</a>
+  <% END %>
+  </div>
+  <% IF msg %>
+    <div class=flash> <% msg %> </div>
+  <% END %>
+
+  <% IF session.logged_in %>
+    <form action="<% add_entry_url %>" method=post class="add-entry well">
+      <dl>
+        <dt>Title:
+        <dd><input type=text size=30 name=title>
+        <dt>Text:
+        <dd><textarea name=text rows=5 cols=40></textarea>
+        <dd><input type=submit value=Share>
+      </dl>
+    </form>
+  <% END %>
+
 <% include 'show_entries.tt' %>
 </div>
 
