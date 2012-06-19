@@ -46,12 +46,7 @@
 
 <script src="javascripts/jquery-1.7.2.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script>
-  $(document).ready(function()
-      {
-      });
-</script>
-<script type="text/javascript" src="/javascripts/twitter.js"></script>
+<script type="text/javascript" src="javascripts/twitter.js"></script>
 
 </body>
 </html>

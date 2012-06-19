@@ -1,20 +1,15 @@
-var tweetUsers = ['work_andrefs'];
-var buildString = "";
+var tweetUser = 'work_andrefs';
+var numTweets = '6';
 
 $(document).ready(function(){
 
 	$('#twitter-ticker').slideDown('slow');
 	
-	for(var i=0;i<tweetUsers.length;i++)
-	{
-		if(i!=0) buildString+='+OR+';
-		buildString+='from:'+tweetUsers[i];
-	}
-	
 	var fileref = document.createElement('script');
 	
 	fileref.setAttribute("type","text/javascript");
-	fileref.setAttribute("src", "http://search.twitter.com/search.json?q="+buildString+"&callback=TweetTick&rpp=6");
+	searchURL = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name="+tweetUser+"&callback=TweetTick&count="+numTweets;
+	fileref.setAttribute("src", searchURL);
 	
 	document.getElementsByTagName("head")[0].appendChild(fileref);
 	
@@ -24,8 +19,9 @@ function TweetTick(ob)
 {
 	var container=$('#tweet-container');
 	container.html('');
+	container.attr('title','');
 	
-	$(ob.results).each(function(el){
+	$(ob).each(function(el){
 	
 		var str = '	<div class="tweet" title="'+relativeTime(this.created_at)+'"><i class="icon-chevron-right"></i> \
 					<div class="txt">'+formatTwitString(this.text)+'</div>\
@@ -69,6 +65,6 @@ function relativeTime(pastTime)
 
 	var dateArr = pastTime.split(' ');
 
-	return dateArr[4].replace(/\:\d+$/,'')+' '+dateArr[2]+' '+dateArr[1]+
-	(dateArr[3]!=curDate.getFullYear()?' '+dateArr[3]:'');
+	return dateArr[3].replace(/\:\d+$/,'')+' '+dateArr[2]+' '+dateArr[1]+
+	(dateArr[5]!=curDate.getFullYear()?' '+dateArr[5]:'');
 }
