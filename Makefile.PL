@@ -19,6 +19,7 @@ WriteMakefile(
 		'Dancer::Plugin::Auth::RBAC::Credentials::DBIC' 	=> 0,
 		'Dancer::Plugin::DBIC' 								=> 0,
 		'Dancer::Plugin::FlashNote' 						=> 0,
+		'Template'											=> 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'papercut-*' },
