@@ -11,7 +11,7 @@
 				<ul class="nav">
 					<% foreach menu_item in session.menu.keys.sort %>
 						<% if session.menu.$menu_item.status and session.menu.$menu_item.status == 'disabled' %>
-							<li title="Soon!"><a href="<% session.menu.$menu_item.value %>">
+							<li title="Soon!"><a href="#">
 							<span class="st">
 							<% session.menu.$menu_item.text %>
 							</span></a></li>
