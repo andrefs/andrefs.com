@@ -129,13 +129,13 @@ address i {
 	margin-bottom: 9px;
 }
 
-.post_title {
+.post h2 {
 	font-size: 30px;
 	margin-bottom: 10px;
 	line-height: 30px;
 }
 
-.post_date {
+.post h3 .post_date {
 	font-size:18px;
 	color: #666;
 	line-height: 20px;
