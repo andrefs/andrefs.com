@@ -32,6 +32,14 @@ get '/' => sub {
     };
 };
 
+get '/add' => sub {
+   # if ( not session('logged_in') ) {
+   #     send_error("Not logged in", 401);
+   # }
+
+	template 'newpost.tt';
+};
+
 post '/add' => sub {
     if ( not session('logged_in') ) {
         send_error("Not logged in", 401);

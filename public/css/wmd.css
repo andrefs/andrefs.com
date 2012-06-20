@@ -6,10 +6,6 @@ body
 
 .wmd-panel
 {
-	margin-left: 25%;
-	margin-right: 25%;
-	width: 50%;
-	min-width: 500px;
 }
 
 .wmd-button-bar 
@@ -28,7 +24,7 @@ body
 
 .wmd-preview 
 { 
-	background-color: #c0e0ff; 
+	background-color: transparent;
 }
 
 .wmd-button-row 
