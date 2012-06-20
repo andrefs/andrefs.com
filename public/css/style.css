@@ -1,6 +1,7 @@
 .hero-image {
   overflow: hidden;
   min-height: 300px; /* 300px is arbitrary. */
+  max-height: 320px; /* 300px is arbitrary. */
   margin-bottom: 20px;
 }
 .hero-image img {

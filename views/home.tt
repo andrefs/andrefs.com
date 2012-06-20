@@ -1,51 +1,50 @@
-<div class="row offset1">
-	<div class="row-fluid vspace">
-		<div class="span4">
-			<div class="hero-image">
-				<img src="/img/andrefs_bw.jpg" alt="">
+<div class="row">
+	<div class="span1"></div>
+	<div class="span4 offset1">
+		<div class="hero-image">
+			<img src="/img/andrefs_bw.jpg" alt="">
+		</div>
+	</div>
+	<div class="span6">
+		<div class="well" style="min-height: 258px">
+			<div class="hero-unit-title">
+				<h1>andrefs.pt</h1>
+				<h3>Welcome to my website!</h3>
+			</div>
+		
+			<p>My name is André Santos and I am a Portuguese
+			software engineer whose main interests include
+			<strong>open source software</strong>,
+			<strong>Perl</strong>,
+			<strong>Natural Language Processing</strong>,
+			<strong>Information Retrieval</strong> and
+			<strong>Bioinformatics</strong>.
+			</p>
+			<p>
+			This whole website is meant to get you to know me
+			a little bit, so feel free to roam around and check the
+			other sections, where you'll find information about the
+			projects I am or have been working on.
+			</p>
 			</div>
 		</div>
-		<div class="span6">
-			<div class="well" style="min-height: 258px">
-				<div class="hero-unit-title">
-					<h1>andrefs.pt</h1>
-					<h3>Welcome to my website!</h3>
-				</div>
-			
-				<p>My name is André Santos and I am a Portuguese
-				software engineer whose main interests include
-				<strong>open source software</strong>,
-				<strong>Perl</strong>,
-				<strong>Natural Language Processing</strong>,
-				<strong>Information Retrieval</strong> and
-				<strong>Bioinformatics</strong>.
-				</p>
-				<p>
-				This whole website is meant to get you to know me
-				a little bit, so feel free to roam around and check the
-				other sections, where you'll find information about the
-				projects I am or have been working on.
-				</p>
-				</div>
-			</div>
+	</div>
+<div class="row">
+	<div class="span4 offset1">
+		<div class="well">
+		<address>
+			<i class="icon-envelope icon-large"></i>
+			<a href="mailto:hello@andrefs.pt">hello@andrefs.pt</a><br />
+			<i class="icon-twitter icon-large"	></i>
+			<a href="http://twitter.com/about_andrefs">@about_andrefs</a></br />
+			<i class="icon-github icon-large"	></i>
+			<a href="http://github.com/andrefs">github.com/andrefs</a></br />
+		</address>
 		</div>
-	<div class="row-fluid vspace">
-		<div class="span4">
-			<div class="well">
-			<address>
-				<i class="icon-envelope icon-large"></i>
-				<a href="mailto:hello@andrefs.pt">hello@andrefs.pt</a><br />
-				<i class="icon-twitter icon-large"	></i>
-				<a href="http://twitter.com/about_andrefs">@about_andrefs</a></br />
-				<i class="icon-github icon-large"	></i>
-				<a href="http://github.com/andrefs">github.com/andrefs</a></br />
-			</address>
-			</div>
-		</div>
-		<div class="span6">
-			<div class="well">
-				<% include 'twitter.tt' %>
-			</div>
+	</div>
+	<div class="span6">
+		<div class="well">
+			<% include 'twitter.tt' %>
 		</div>
 	</div>
 </div>
