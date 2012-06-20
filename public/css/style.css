@@ -129,3 +129,29 @@ address i {
 	margin-bottom: 9px;
 }
 
+.post_title {
+	font-size: 30px;
+	margin-bottom: 10px;
+	line-height: 30px;
+}
+
+.post_date {
+	font-size:18px;
+	color: #666;
+	line-height: 20px;
+	margin-top: -5px;
+}
+
+.post {
+	font-size: 16px;
+}
+
+.post p {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.posted {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
