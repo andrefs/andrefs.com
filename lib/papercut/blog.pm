@@ -9,6 +9,8 @@ use Data::Dump qw/pp/;
 
 prefix '/blog';
 
+
+
 get '/' => sub {
 	my $papercut_schema = schema 'papercut';
 	my $rs = $papercut_schema->resultset('Post')->search(undef, {
@@ -56,41 +58,5 @@ post '/add' => sub {
     redirect uri_for(prefix);
 };
 
-any ['get', 'post'] => '/login' => sub {
-    my $err;
-	my $schema = schema 'papercut';
-
-    if ( request->method() eq "POST" ) {
-        # process form input
-		my $auth = auth(params->{login},params->{password});
-		flash error => pp $auth;
-		if(!authd()){
-            $err = "Invalid username or password";
-        }
-        else {
-            session 'logged_in' => true;
-			my $login = $schema->resultset('User')->find({
-				login => params->{'login'}
-			},{
-				columns => [qw/id/]
-			})->id;
-            session 'login' => $login;
-            flash ok => 'You are logged in.';
-            redirect uri_for(prefix);
-        }
-    }
-
-    # display login form
-    template 'login.tt', {
-        'err' => $err,
-    };
-
-};
-
-get '/logout' => sub {
-    session->destroy;
-    flash ok => 'You are logged out.';
-    redirect uri_for(prefix);
-};
 
 true;

@@ -3,9 +3,9 @@
 <a href="<% root_url %>"><h1>PaperCut</h1></a>
   <div class=metanav>
   <% IF not session.logged_in %>
-    <a href="<% login_url %>">log in</a>
+    <a href="<% login_url %>">Log in</a>
   <% ELSE %>
-    <a href="<% logout_url %>">log out</a>
+    <a href="<% logout_url %>">Log out</a>
   <% END %>
   </div>
   <% IF msg %>

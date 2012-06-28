@@ -89,6 +89,7 @@ h1,h3,p
 
 body {
 	background: url(/img/bg.png) left top repeat ;
+	background-attachment: fixed;
 	color: #444;
 }
 
@@ -154,4 +155,21 @@ address i {
 .posted {
 	margin-top: 10px;
 	margin-bottom: 15px;
+}
+
+
+.navbar  p a {
+	float: none;
+	color: #999;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 
+	rgba(0, 0, 0, 0.25);
+}
+
+.navbar p {
+	font-size: 13px;
+	color: #999;
+}
+
+div .login input {
 }

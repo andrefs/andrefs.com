@@ -21,6 +21,15 @@
 						<% end %>
 					<% end %>
 				</ul>
+				<ul class="nav login pull-right">
+					<li>
+						<% IF not session.logged_in %>
+						<a href="<% login_url %>">Log in</a>
+						<% ELSE %>
+						<a href="<% logout_url %>">Log out</a>
+						<% END %>
+					</li>
+				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
