@@ -4,7 +4,9 @@
 			<div class="post well">
       			<h2 class="post_title"><% post.title %></h2>
 	  			<h3 class="post_date">Jun 20, 2012</h3>
-	  			<% post.text %>
+				<div class="post_text">
+	  				<% post.text %>
+				</div>
 	  			<div class="posted">Posted by <% post.author %></div>
 	  		</div>
     	<% END %>

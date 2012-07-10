@@ -1,3 +1,49 @@
+<link rel="stylesheet" href="<% request.uri_base %>/css/jquery.wysiwyg.css" >
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery.wysiwyg.js"></script>
+<script type="text/javascript">
+$(function() {
+		$('#wysiwyg').wysiwyg({
+		    controls: {
+		        strikeThrough: { visible: true },
+		        underline: { visible: true },
+		        subscript: { visible: true },
+		        superscript: { visible: true }
+		    }
+		});
+});
+</script>
+
+<div class="row offset2 span8">
+
+    <form action="<% add_entry_url %>" method=post class="add-entry well">
+      <dl>
+        <dt>Title:
+        <dd><input type=text size=30 name=title>
+        <dt>Tags:
+        <dd><input type=text size=30 name=tags>
+		<div>
+		<div id="wmd-button-bar"></div>
+		<textarea id="wysiwyg" name=text></textarea>
+		</div>
+        <dd><input type=submit value=Share>
+      </dl>
+    </form>
+
+<div class="post well">
+<h2 class="post_title"></h2>
+<div class="post_text">
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!--
 <link rel="stylesheet" href="<% request.uri_base %>/css/wmd.css" >
 
 <div class="row offset2 span8">
@@ -17,7 +63,8 @@
     </form>
 
 <div class="post well">
-<div id="wmd-preview" class="wmd-panel wmd-preview">
+<h2 class="post_title"></h2>
+<div id="wmd-preview" class="wmd-panel wmd-preview post_text">
 </div>
 </div>
 </div>
@@ -28,6 +75,9 @@
 <script type="text/javascript" src="<% request.uri_base %>/javascripts/Markdown.Editor.js"></script>
 
 <script type="text/javascript">
+
+setInterval(function() { $('.post_title').html($('input[name=title]').val()); }, 200);
+
 (function () {
 var converter1 = Markdown.getSanitizingConverter();
 var editor1 = new Markdown.Editor(converter1);
@@ -35,5 +85,6 @@ editor1.run();
 })();
 </script>
 
+-->
 																		                
 
