@@ -173,3 +173,8 @@ address i {
 
 div .login input {
 }
+
+.post_text {
+	line-height: 23px;
+	font-size: 18px;
+}

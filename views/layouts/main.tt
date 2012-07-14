@@ -24,11 +24,11 @@
 	}
 </style>
 
-<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery-1.7.2.min.js"></script>
-<link rel="stylesheet" href="<% request.uri_base %>/bootstrap/css/bootstrap-responsive.css" >
-<link rel="stylesheet" href="<% request.uri_base %>/fontawesome/css/font-awesome.css" >
-<link rel="stylesheet" href="<% request.uri_base %>/css/style.css" >
-<link rel="stylesheet" href="<% request.uri_base %>/css/twitter.css" >
+<link rel="stylesheet" type="text/css" href="<% request.uri_base %>/bootstrap/css/bootstrap-responsive.css" >
+<link rel="stylesheet" type="text/css" href="<% request.uri_base %>/fontawesome/css/font-awesome.css" >
+<link rel="stylesheet" type="text/css" href="<% request.uri_base %>/css/style.css" >
+<link rel="stylesheet" type="text/css" href="<% request.uri_base %>/css/twitter.css" >
+<link rel="stylesheet" type="text/css" href="<% request.uri_base %>/css/custom-theme/jquery-ui-1.8.16.custom.css" >	
 
 <!-- Le fav and touch icons -->
 <link rel="shortcut icon" 	 href="<% request.uri_base %>/img/favicon.ico">
@@ -39,15 +39,18 @@
 </head>
 <body>
 
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="<% request.uri_base %>/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/twitter.js"></script>
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery-ui-1.8.16.custom.min.js"></script>
+
+
 <% include 'navmenu.tt' %>
 <div class="container">
 	<% include 'flash.tt' %>
 	<% content %>
 	<% include 'footer.tt' %>
 </div>
-
-<script type="text/javascript" src="<% request.uri_base %>/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<% request.uri_base %>/javascripts/twitter.js"></script>
 
 </body>
 </html>

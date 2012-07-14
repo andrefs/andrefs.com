@@ -42,12 +42,18 @@ any ['get', 'post'] => '/login' => sub {
         }
         else {
             session 'logged_in' => true;
-			my $login = $schema->resultset('User')->find({
+#			my $login = $schema->resultset('User')->find({
+#				login => params->{'login'}
+#			},{
+#				columns => [qw/id/]
+#			})->id;
+			my $user = $schema->resultset('User')->find({
 				login => params->{'login'}
 			},{
-				columns => [qw/id/]
-			})->id;
-            session 'login' => $login;
+				columns => [qw/id name/]
+			});
+            session 'login' => $user->id;
+            session 'username' => $user->name;
             flash ok => 'You are logged in.';
             redirect uri_for(prefix);
         }

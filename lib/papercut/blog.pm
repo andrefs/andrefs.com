@@ -35,13 +35,13 @@ get '/' => sub {
 };
 
 get '/add' => sub {
-   if ( not session('logged_in') ) {
-       	flash error 	=> 'You need to be logged in!';
-    	redirect uri_for('/login');
-   }
-   else {
+   # if ( not session('logged_in') ) {
+   #     	flash error 	=> 'You need to be logged in!';
+   #  	redirect uri_for('/login');
+   # }
+   # else {
       	template 'newpost.tt';
-   }
+   # }
 };
 
 post '/add' => sub {

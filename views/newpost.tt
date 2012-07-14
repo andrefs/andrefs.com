@@ -5,7 +5,30 @@
 
 <% USE date %>
 <link rel="stylesheet" href="<% request.uri_base %>/aloha/css/aloha.css" type="text/css" />
-<script src="<% request.uri_base %>/aloha/lib/aloha-config.js" language="javascript"></script>
+
+<script type="text/javascript">
+Aloha = window.Aloha || {};
+Aloha.settings = { 
+    plugins: {
+        format: {
+            config : [ 'b', 'i','sub','sup','removeFormat'],
+            editables : { '#post_title' : [ ], },
+            removeFormats : [ 'strong', 'em', 'b', 'i', 's', 'cite', 'q', 'code', 'abbr', 'del', 'sub', 'sup']
+        },  
+        image: {
+            //config : { 'img': { 'max_width': '50px','max_height': '50px' }},
+            config : [ 'img' ],
+            editables : { '#post_title' : [ ], }
+        },  
+        list: {
+            editables : { '#post_title' : [ ], }
+        }   
+    },
+	floatingmenu: {
+		width: 250,
+	}
+};  
+</script>
 <script src="<% request.uri_base %>/aloha/lib/aloha.js"
         data-aloha-plugins="common/format,
 							common/undo,
@@ -13,40 +36,62 @@
                             common/highlighteditables"></script>
 
 
-<script type="text/javascript">
-Aloha.ready( function() {
-	// Make #wysiwyg editable once Aloha is loaded and ready.
-	Aloha.jQuery('.post_title').aloha();
-	Aloha.jQuery('.post_date').aloha();
-	Aloha.jQuery('.post_text').aloha();
 
-});
-</script>
 </head>
 
 <div class="row offset2 span8">
-  <form action="<% add_entry_url %>" method=post class="add-entry well">
-    <dl>
-  	  <div style="border-style: dashed; padding-left:20px; padding-top: 20px; padding-right: 10px; border-radius: 20px;">
-  	    <div class="post_title"><h2>Titulo</h2></div>
-      	<div class="post_date"><h3><% date.format(date.now, '%b %d, %Y') %></h3></div>
-  	    <div class="post_text" style="width:auto; min-height: 300px;"></div>
-      	<div class="posted">Posted by </div>
+  <form action="<% add_entry_url %>" method=post class="add-entry">
+	<div class="post well">
+  	  <div style="border-style: dashed; padding-left:20px; padding-top: 20px; padding-right: 20px; border-radius: 20px;">
+  	    <div class="post_title"><h2 id="post_title">Click here to edit the title!</h2></div>
+		<!--input type="text" name="date" id="date" /-->
+      	<!--div class="post_date"><h3><% date.format(date.now, '%b %d, %Y') %></h3></div-->
+      	<div class="post_date"><input type="hidden" name="datepicker" id="datepicker" /><h3 id="date_alternate"></h3></div>
+  	    <div class="post_text" style="width:auto; min-height: 300px;"><p>Click here to edit the post!</p></div>
+      	<div class="posted">Posted by <% session.username %></div>
   	  </div>
 	  <input type="hidden" name="title">
 	  <input type="hidden" name="text" >
-	  <input type="hidden" name="date" >
-      <dd><input type=submit value="Post">
-    </dl>
+	  <!--input type="hidden" name="date" -->
+    </div>
+      <input type=submit value="Post">
   </form>
 </div>
 
 <script type="text/javascript">
+Aloha.ready( function() {
+	// Make #wysiwyg editable once Aloha is loaded and ready.
+	Aloha.jQuery('#post_title').aloha();
+	//Aloha.jQuery('.post_date').aloha();
+	Aloha.jQuery('.post_text').aloha();
+
+});
+
 setInterval(function() {
-	$('input[name=title]').val($('.post_title').text());
+	$('input[name=title]').val($('#post_title').text());
 	$('input[name=text]').val($('.post_text').html());
-	$('input[name=date]').val($('.post_date').text());
+	//$('input[name=date]').val($('.post_date').text());
 }, 200);
+
+$(function(){
+	$('#datepicker').datepicker({ dateFormat: "M d, yy" });
+	$('.post_date').click(function(){
+		$('#datepicker').focus();
+	});
+	$('#datepicker').change(function(){
+		$('#date_alternate').html($('#datepicker').val());
+	});
+	$('#datepicker').datepicker('setDate', new Date());
+	$('#date_alternate').html($('#datepicker').val());
+});
+
+$('#post_title').one('focus', function(){
+	$('#post_title').html(''); 
+});
+
+$('.post_text').one('focus', function(){
+	$('.post_text').html('<p style=""><br class="aloha-end-br"></p>');
+});
 </script>
 
 
