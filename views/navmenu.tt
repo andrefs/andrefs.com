@@ -12,8 +12,7 @@
 					<% foreach menu_item in session.menu.keys.sort %>
 						<% if session.menu.$menu_item.status and session.menu.$menu_item.status == 'disabled' %>
 							<li title="Soon!"><a href="#">
-							<span class="st">
-							<% session.menu.$menu_item.text %>
+							<i class="icon-ban-circle icon-large"></i> <span class="st"><% session.menu.$menu_item.text %>
 							</span></a></li>
 						<% else %>
 							<li><a href="
@@ -31,10 +30,10 @@
 				<ul class="nav pull-right">
 					<li>
 						<% IF not session.logged_in %>
-						<a href="<% login_url %>">Log in</a>
+						<a href="<% login_url %>"><i class="icon-signin icon-large"></i> Log in</a>
 						<% ELSE %>
-						<a href="<% base_url _ 'posts/new' %>">New post</a></li><li>
-						<a href="<% logout_url %>">Log out</a>
+						<a href="<% base_url _ 'posts/new' %>"><i class="icon-edit icon-large"></i> New post</a></li><li>
+						<a href="<% logout_url %>"><i class="icon-signout icon-large"></i> Log out</a>
 						<% END %>
 					</li>
 				</ul>

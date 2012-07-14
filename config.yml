@@ -47,17 +47,18 @@ warnings: "1"
 
 appmenu:
   000_home:
-    text: Projects
+#    text: '<i class="icon-cogs icon-large"></i> Projects'
+    text: 'Projects'
     value: \#
     status: disabled
   001_slide:
-    text: Publications
+    text: '<i class="icon-book icon-large"></i> Publications'
     value: http://publications.andrefs.pt
   002_grid:
-    text: Blog
+    text: '<i class="icon-globe icon-large"></i> Blog'
     value: /posts
   003_grid:
-    text: CV
+    text: '<i class="icon-download icon-large"></i> CV'
     value: http://cv.andrefs.pt
 powered_by:
   text: Dancer
