@@ -1,6 +1,0 @@
-
-<div class="row offset2 span8">
-<a href="<% root_url %>"><h1>PaperCut</h1></a>
-<% include 'show_entries.tt' %>
-</div>
-

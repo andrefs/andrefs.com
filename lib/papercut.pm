@@ -7,7 +7,7 @@ use Dancer::Plugin::Auth::RBAC::Credentials::DBIC;
 use Dancer::Plugin::FlashNote;
 use Data::Dump qw/pp dump/;
 
-load_app 'papercut::blog';
+load_app 'papercut::posts';
 #load_app 'papercut::deploy';
 
 our $VERSION = '0.1';
@@ -65,13 +65,21 @@ any ['get', 'post'] => '/login' => sub {
     };
 };
 
-
 get '/logout' => sub {
     session->destroy;
     flash ok => 'You are logged out.';
     redirect uri_for(prefix);
 };
 
+get qr{/coiso/([\d]+)} => sub {
+	my ($num) = splat;
+	"Hello $num";
+};
+
+
+get '/coiso/all' => sub {
+	"Hello todos";
+};
 
 true;
 

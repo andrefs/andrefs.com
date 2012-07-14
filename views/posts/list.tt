@@ -1,0 +1,20 @@
+<div class="row offset2 span8">
+<a href="<% root_url %>"><h1>PaperCut</h1></a>
+	<div class=page>
+	  	<% IF entries.size %>
+	    	<% FOREACH post IN entries %>
+				<div class="post well">
+	      			<h2 class="post_title"><a href="<% base_url _ post.link %>"><% post.title %></a></h2>
+		  			<h3 class="post_date">Jun 20, 2012</h3>
+					<div class="post_text">
+		  				<% post.text %>
+					</div>
+		  			<div class="posted">Posted by <% post.author %></div>
+		  		</div>
+	    	<% END %>
+	  	<% ELSE %>
+	    	<em>Unbelievable.  No entries here so far</em>
+	  	<% END %>
+	</div>
+</div>
+

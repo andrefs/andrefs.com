@@ -1,4 +1,4 @@
-package papercut::blog;
+package papercut::posts;
 use strict; use warnings;
 use Dancer ':syntax';
 use Dancer::Plugin::DBIC;
@@ -9,7 +9,7 @@ use Dancer::Plugin::Feed;
 use Data::Dump qw/pp/;
 use Try::Tiny;
 
-prefix '/blog';
+prefix '/posts';
 
 get '/' => sub {
 	my $papercut_schema = schema 'papercut';
@@ -25,26 +25,39 @@ get '/' => sub {
 			text  	=> $post->text,
 			author 	=> $post->author->name,
 			id		=> $post->id,
+			link 	=> prefix . "/". $post->id,
 		}
 	}
 
-    template 'blog.tt', {
-        'add_entry_url' => uri_for('/blog/add'),
+    template 'posts/list.tt', {
+        'add_entry_url' => uri_for('/posts/new'),
         'entries' => $entries,
     };
 };
 
-get '/add' => sub {
+get qr{/(\d+)} => sub {
+	my ($post_id) = splat;
+	my $papercut_schema = schema 'papercut';
+	my $post = $papercut_schema->resultset('Post')->find(
+		{ id => $post_id},
+		{ columns => [qw/id title text author/ ] },
+	);
+	template 'posts/view.tt', {
+		post => $post,
+	}
+};
+
+get '/new' => sub {
    # if ( not session('logged_in') ) {
    #     	flash error 	=> 'You need to be logged in!';
    #  	redirect uri_for('/login');
    # }
    # else {
-      	template 'newpost.tt';
+      	template 'posts/new.tt';
    # }
 };
 
-post '/add' => sub {
+post '/new' => sub {
     if ( not session('logged_in') ) {
        	flash error 	=> 'You need to be logged in!';
     	redirect uri_for('/login');
@@ -74,7 +87,7 @@ get '/feed/:format' => sub {
 			title 	=> $post->title,
 			content	=> $post->text,
 			author 	=> $post->author->name,
-			# link
+			link    => uri_for(prefix) . '/' .$post->id,
 			# issued
 		}
 	}

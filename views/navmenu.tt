@@ -16,16 +16,24 @@
 							<% session.menu.$menu_item.text %>
 							</span></a></li>
 						<% else %>
-							<li><a href="<% session.menu.$menu_item.value %>">
+							<li><a href="
+								<% link  = session.menu.$menu_item.value ; matches = link.match('^\/(.*)$') %>
+								<% if matches.0 %>
+									<% root_url _ matches.0 %>
+								<% else %>
+									<% link %>
+								<% end %>
+							">
 							<% session.menu.$menu_item.text %></a></li>
 						<% end %>
 					<% end %>
 				</ul>
-				<ul class="nav login pull-right">
+				<ul class="nav pull-right">
 					<li>
 						<% IF not session.logged_in %>
 						<a href="<% login_url %>">Log in</a>
 						<% ELSE %>
+						<a href="<% base_url _ 'posts/new' %>">New post</a></li><li>
 						<a href="<% logout_url %>">Log out</a>
 						<% END %>
 					</li>

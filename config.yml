@@ -55,7 +55,7 @@ appmenu:
     value: http://publications.andrefs.pt
   002_grid:
     text: Blog
-    value: blog
+    value: /posts
   003_grid:
     text: CV
     value: http://cv.andrefs.pt
