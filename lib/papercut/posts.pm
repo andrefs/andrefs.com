@@ -65,8 +65,9 @@ post '/new' => sub {
 
 	my $schema = schema 'papercut';
 	my $rs = $schema->resultset('Post')->create({
-		title => params->{'title'}, 
-		text =>  params->{'text'},
+		title 	=> params->{'title'}, 
+		text 	=> params->{'text'},
+		#date 	=> 
 		author => session 'login',
 	});
 
@@ -88,6 +89,7 @@ get '/feed/:format' => sub {
 			content	=> $post->text,
 			author 	=> $post->author->name,
 			link    => uri_for(prefix) . '/' .$post->id,
+			id		=> $post->id,
 			# issued
 		}
 	}

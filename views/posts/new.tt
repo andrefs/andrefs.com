@@ -50,7 +50,7 @@ Aloha.settings = {
 			</div>
 			<input type="hidden" name="title">
 			<input type="hidden" name="text" >
-			<!--input type="hidden" name="date" -->
+			<input type="text"   name="date" -->
 		 </div>
 		 <input type=submit value="Post">
 		 </form>
@@ -69,7 +69,7 @@ Aloha.ready( function() {
 setInterval(function() {
 	$('input[name=title]').val($('#post_title').text());
 	$('input[name=text]').val($('.post_text').html());
-	//$('input[name=date]').val($('.post_date').text());
+	$('input[name=date]').val($('.post_date').text());
 }, 200);
 
 $(function(){
