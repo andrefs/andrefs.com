@@ -97,7 +97,7 @@ get '/feed/:format' => sub {
 	try {
 		$feed = create_feed(
 			format  => params->{format},
-			title   => 'my great feed',
+			title   => config->{blogname} // config->{appname} // 'PaperCut',
 			entries => $entries,
 		);
 	}
