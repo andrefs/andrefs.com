@@ -1,0 +1,15 @@
+
+FEEDS (ATOM, RSS)
+	- http://advent.perldancer.org/2010/12
+	- http://stackoverflow.com/questions/2063616/how-to-reference-a-yaml-setting-from-elsewhere-in-the-same-yaml-file
+
+
+
+	appname: "andrefs.pt" &appname
+	...
+	plugins:
+	  Feed:
+	    title: *appname
+	    copyright: PerlDancer
+	    tagline: PerlDancer advent calendar, a community effort
+	    description: this is a description for our calendar

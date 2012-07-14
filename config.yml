@@ -56,7 +56,6 @@ appmenu:
   002_grid:
     text: Blog
     value: blog
-    status: disabled
   003_grid:
     text: CV
     value: http://cv.andrefs.pt

@@ -1,41 +1,53 @@
-<link rel="stylesheet" href="<% request.uri_base %>/css/jquery.wysiwyg.css" >
-<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery.wysiwyg.js"></script>
+<!--link rel="stylesheet" href="<% request.uri_base %>/css/jquery.wysiwyg.css" >
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery.wysiwyg.js"></script-->
+
+<!-- add aloha -->
+
+<% USE date %>
+<link rel="stylesheet" href="<% request.uri_base %>/aloha/css/aloha.css" type="text/css" />
+<script src="<% request.uri_base %>/aloha/lib/aloha-config.js" language="javascript"></script>
+<script src="<% request.uri_base %>/aloha/lib/aloha.js"
+        data-aloha-plugins="common/format,
+							common/undo,
+							common/list,
+                            common/highlighteditables"></script>
+
+
 <script type="text/javascript">
-$(function() {
-		$('#wysiwyg').wysiwyg({
-		    controls: {
-		        strikeThrough: { visible: true },
-		        underline: { visible: true },
-		        subscript: { visible: true },
-		        superscript: { visible: true }
-		    }
-		});
+Aloha.ready( function() {
+	// Make #wysiwyg editable once Aloha is loaded and ready.
+	Aloha.jQuery('.post_title').aloha();
+	Aloha.jQuery('.post_date').aloha();
+	Aloha.jQuery('.post_text').aloha();
+
 });
 </script>
+</head>
 
 <div class="row offset2 span8">
-
-    <form action="<% add_entry_url %>" method=post class="add-entry well">
-      <dl>
-        <dt>Title:
-        <dd><input type=text size=30 name=title>
-        <dt>Tags:
-        <dd><input type=text size=30 name=tags>
-		<div>
-		<div id="wmd-button-bar"></div>
-		<textarea id="wysiwyg" name=text></textarea>
-		</div>
-        <dd><input type=submit value=Share>
-      </dl>
-    </form>
-
-<div class="post well">
-<h2 class="post_title"></h2>
-<div class="post_text">
-</div>
-</div>
+  <form action="<% add_entry_url %>" method=post class="add-entry well">
+    <dl>
+  	  <div style="border-style: dashed; padding-left:20px; padding-top: 20px; padding-right: 10px; border-radius: 20px;">
+  	    <div class="post_title"><h2>Titulo</h2></div>
+      	<div class="post_date"><h3><% date.format(date.now, '%b %d, %Y') %></h3></div>
+  	    <div class="post_text" style="width:auto; min-height: 300px;"></div>
+      	<div class="posted">Posted by </div>
+  	  </div>
+	  <input type="hidden" name="title">
+	  <input type="hidden" name="text" >
+	  <input type="hidden" name="date" >
+      <dd><input type=submit value="Post">
+    </dl>
+  </form>
 </div>
 
+<script type="text/javascript">
+setInterval(function() {
+	$('input[name=title]').val($('.post_title').text());
+	$('input[name=text]').val($('.post_text').html());
+	$('input[name=date]').val($('.post_date').text());
+}, 200);
+</script>
 
 
 

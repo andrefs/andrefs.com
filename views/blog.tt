@@ -1,17 +1,6 @@
 
 <div class="row offset2 span8">
 <a href="<% root_url %>"><h1>PaperCut</h1></a>
-  <div class=metanav>
-  <% IF not session.logged_in %>
-    <a href="<% login_url %>">Log in</a>
-  <% ELSE %>
-    <a href="<% logout_url %>">Log out</a>
-  <% END %>
-  </div>
-  <% IF msg %>
-    <div class=flash> <% msg %> </div>
-  <% END %>
-
 <% include 'show_entries.tt' %>
 </div>
 
