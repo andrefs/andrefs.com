@@ -28,10 +28,10 @@ $schema->populate( Users => [
 ]);
 
 my @post_list= (
-  [ 'First post',  'This is the text of the first  post',    'adama'    ],
-  [ 'Second post', 'This is the text of the second post',    'adama'    ],
-  [ 'Third post',  'This is the text of the third  post',    'apollo'   ],
-  [ 'Fourth post', 'This is the text of the fourth po',      'apollo'   ],
+  [ 'First post',  '<p>This is the text of the first  post</p>',    'adama'    ],
+  [ 'Second post', '<p>This is the text of the second post</p>',    'adama'    ],
+  [ 'Third post',  '<p>This is the text of the third  post</p>',    'apollo'   ],
+  [ 'Fourth post', '<p>This is the text of the fourth post</p>',    'apollo'   ],
   );
 
 # transform author names into ids

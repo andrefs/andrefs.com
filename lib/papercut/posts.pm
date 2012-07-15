@@ -11,6 +11,13 @@ use Try::Tiny;
 
 prefix '/posts';
 
+hook before_template => sub {
+    my $tokens = shift;
+    $tokens->{'blog_url'} 	= uri_for(prefix);
+};
+
+
+
 get '/' => sub {
 	my $papercut_schema = schema 'papercut';
 	my $rs = $papercut_schema->resultset('Post')->search(undef, {
@@ -25,12 +32,11 @@ get '/' => sub {
 			text  	=> $post->text,
 			author 	=> $post->author->name,
 			id		=> $post->id,
-			link 	=> prefix . "/". $post->id,
 		}
 	}
 
     template 'posts/list.tt', {
-        'add_entry_url' => uri_for('/posts/new'),
+        'add_entry_url' => uri_for(prefix.'/new'),
         'entries' => $entries,
     };
 };
@@ -43,6 +49,18 @@ get qr{/(\d+)} => sub {
 		{ columns => [qw/id title text author/ ] },
 	);
 	template 'posts/view.tt', {
+		post => $post,
+	}
+};
+
+get qr{/edit/(\d+)} => sub {
+	my ($post_id) = splat;
+	my $papercut_schema = schema 'papercut';
+	my $post = $papercut_schema->resultset('Post')->find(
+		{ id => $post_id},
+		{ columns => [qw/id title text author/ ] },
+	);
+	template 'posts/edit.tt', {
 		post => $post,
 	}
 };

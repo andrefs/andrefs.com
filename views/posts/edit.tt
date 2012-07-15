@@ -36,12 +36,10 @@ Aloha.settings = {
 		<form action="<% add_entry_url %>" method=post class="add-entry">
 		<div class="post well">
 			<div style="border-style: dashed; padding-left:20px; padding-top: 20px; padding-right: 20px; border-radius: 20px;">
-				<div class="post_title"><h2 id="post_title">Click here to edit the title!</h2></div>
-				<!--input type="text" name="date" id="date" /-->
-				<!--div class="post_date"><h3><% date.format(date.now, '%b %d, %Y') %></h3></div-->
+				<div class="post_title"><h2 id="post_title"><% post.title %></h2></div>
 				<div class="post_date"><input type="hidden" name="datepicker" id="datepicker" /><h3 id="date_alternate"></h3></div>
-				<div class="post_text" style="width:auto; min-height: 200px;"><p>Click here to edit the post!</p></div>
-				<div class="posted">Posted by <% session.username %></div>
+				<div class="post_text" style="width:auto; min-height: 200px;"><% post.text %></div>
+				<div class="posted">Posted by <% post.author.name %></div>
 			</div>
 			<input type="hidden" name="title">
 			<input type="hidden" name="text" >

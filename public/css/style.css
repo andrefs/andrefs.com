@@ -178,3 +178,7 @@ div .login input {
 	line-height: 23px;
 	font-size: 18px;
 }
+
+.inline {
+	display: inline;
+}
