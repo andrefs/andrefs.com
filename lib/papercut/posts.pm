@@ -19,6 +19,8 @@ hook before_template => sub {
 
 
 get '/' => sub {
+	flash info => 'This zone of my website is still under heavy development!';
+
 	my $papercut_schema = schema 'papercut';
 	my $rs = $papercut_schema->resultset('Post')->search(undef, {
 		columns 	=> [qw/id title text author/ ],

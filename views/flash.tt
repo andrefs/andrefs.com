@@ -1,4 +1,4 @@
-<div class="row offset1 span10">
+<div class="row offset2 span8">
 <% if flash.success %>
 	<div class="alert alert-success">
 		<a class="close" data-dismiss="alert">×</a>
