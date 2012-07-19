@@ -22,5 +22,6 @@ create table if not exists posts (
 	id integer primary key autoincrement,
 	title string not null,
 	text string not null,
-	author integer references users(id)
+	author integer references users(id),
+	visible integer default 1
 );

@@ -37,7 +37,7 @@ get '/' => sub {
 		}
 	}
 
-    template 'posts/list.tt', {
+    template 'posts/show.tt', {
         'add_entry_url' => uri_for(prefix.'/new'),
         'entries' => $entries,
     };
@@ -130,6 +130,31 @@ get '/feed/:format' => sub {
 	};
 	return $feed;
 };
+
+get '/list' => sub {
+	my $papercut_schema = schema 'papercut';
+	my $rs = $papercut_schema->resultset('Post')->search(undef, {
+		columns 	=> [qw/id title text author visible/ ],
+		order_by	=> { -desc => qw/id/ },
+	});
+
+	my $entries = [];
+	while( my $post = $rs->next){
+		push @$entries,{
+			title 	=> $post->title,
+			text  	=> $post->text,
+			author 	=> $post->author->name,
+			id		=> $post->id,
+			visible => $post->visible,
+		}
+	}
+
+    template 'posts/list.tt', {
+        'add_entry_url' => uri_for(prefix.'/new'),
+        'entries' => $entries,
+    };
+};
+
 
 
 true;

@@ -26,6 +26,8 @@ plugins:
   DBIC:
     papercut:
       dsn:  "dbi:SQLite:dbname=papercut.db"
+      components:
+        - 'InflateColumn::Boolean'
   Auth::RBAC:
     credentials:
       class: DBIC

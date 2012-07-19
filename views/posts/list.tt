@@ -1,23 +1,40 @@
 <div class="row offset2 span8">
 <a href="<% blog_url %>"><h1>PaperCut</h1></a>
-	<div class=page>
-	  	<% IF entries.size %>
-	    	<% FOREACH post IN entries %>
-				<div class="post well">
-	      			<h2 class="inline post_title"><a href="<% blog_url _ '/' _ post.id %>"><% post.title %></a></h2>
-					<% if session.logged_in %>
-						&nbsp;<a href="<% blog_url _ '/edit/' _ post.id %>"><i class="icon-edit"></i></a>
-					<% end %>
-		  			<h3 class="post_date">Jun 20, 2012</h3>
-					<div class="post_text">
-		  				<% post.text %>
-					</div>
-		  			<div class="posted">Posted by <% post.author %></div>
-		  		</div>
-	    	<% END %>
-	  	<% ELSE %>
-	    	<em>Unbelievable.  No entries here so far</em>
-	  	<% END %>
+	<div class="page">
+		<div class="well">
+		  	<% IF entries.size %>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Date</th>
+						<th>Visible</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+		    	<% FOREACH post IN entries %>
+					<tr>
+						<td><a href="<% blog_url _ '/' _ post.id %>"><% post.title %></a></td>
+						<td>Jun 20, 2012</td>
+						<td>
+							<a href="#">
+							<% if post.visible %>
+								<i class="icon-check icon-large"></i>
+							<% else %>
+								<i class="icon-check-empty icon-large"></i>
+							<% end %>
+							</a>
+						</td>
+						<td></td>
+					</tr>
+		    	<% END %>
+				</tbody>
+			</table>
+		  	<% ELSE %>
+		    	<em>Unbelievable.  No entries here so far</em>
+		  	<% END %>
+		</div>
 	</div>
 </div>
 
