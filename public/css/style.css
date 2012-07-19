@@ -50,8 +50,8 @@ h1 {
 	
 .well {
   padding: 30px;
-  /*background-color: #eee;*/
-  background: url(/img/bg_green2.png) left top repeat ;
+  background-color: rgba(1, 49, 1, 0.10);
+  /*background: url(/img/bg_green2.png) left top repeat ;*/
   min-height: 30px;
 }
 p {
