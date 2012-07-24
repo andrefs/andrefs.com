@@ -55,7 +55,7 @@ any ['get', 'post'] => '/login' => sub {
             session 'login' => $user->id;
             session 'username' => $user->name;
             flash ok => 'You are logged in.';
-            redirect uri_for(prefix);
+            redirect uri_for('/posts/list');
         }
     }
 

@@ -1,5 +1,4 @@
 <div class="well">
-  	<% IF entries.size %>
 	<table class="table table-condensed">
 		<thead>
 			<tr>
@@ -28,8 +27,5 @@
     	<% END %>
 		</tbody>
 	</table>
-  	<% ELSE %>
-    	<em>Unbelievable.  No entries here so far</em>
-  	<% END %>
 </div>
 

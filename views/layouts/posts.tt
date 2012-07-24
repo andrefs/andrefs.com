@@ -1,8 +1,10 @@
 <% WRAPPER 'layouts/main.tt' %>
-	<div class="row offset2 span8">
-		<h1 class="blog-title"><a href="<% blog_url %>">PaperCut</a> <a class="pull-right" href="<% blog_url %>/feed/atom"><i class="icon-rss"></i></a></h1> 
-		<div class=page>
-			<% content %>
+	<div class="row"> 
+		<div class="offset2 span8">
+			<h1 class="blog-title"><a href="<% blog_url %>">PaperCut</a> <a class="pull-right" href="<% blog_url %>/feed/atom"><i class="icon-rss"></i></a></h1> 
+			<div class=page>
+				<% content %>
+			</div>
 		</div>
 	</div>
 <% end %>
