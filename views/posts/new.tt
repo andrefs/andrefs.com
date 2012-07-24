@@ -7,16 +7,22 @@ Aloha.settings = {
     plugins: {
         format: {
             config : [ 'b', 'i','sub','sup','removeFormat'],
-            editables : { '#post_title' : [ ], },
+            editables : { 	'#post_title' : [ ],
+							'.post_tags'  : [ ],
+ 			},
             removeFormats : [ 'strong', 'em', 'b', 'i', 's', 'cite', 'q', 'code', 'abbr', 'del', 'sub', 'sup']
         },  
         image: {
             //config : { 'img': { 'max_width': '50px','max_height': '50px' }},
             config : [ 'img' ],
-            editables : { '#post_title' : [ ], }
+            editables : { 	'#post_title' : [ ],
+							'.post_tags'  : [ ],
+			}
         },  
         list: {
-            editables : { '#post_title' : [ ], }
+            editables : { 	'#post_title' : [ ],
+							'.post_tags'  : [ ],
+ 			}
         }   
     },
 	floatingmenu: {
@@ -30,27 +36,23 @@ Aloha.settings = {
 							common/list,
                             common/highlighteditables"></script>
 
-<div class="row offset2 span8">
-	<a href="<% blog_url %>"><h1>PaperCut</h1></a>
-	<div class=page>
-		<form action="<% add_entry_url %>" method=post class="add-entry">
-		<div class="post well">
-			<div style="border-style: dashed; padding-left:20px; padding-top: 20px; padding-right: 20px; border-radius: 20px;">
-				<div class="post_title"><h2 id="post_title">Click here to edit the title!</h2></div>
-				<!--input type="text" name="date" id="date" /-->
-				<!--div class="post_date"><h3><% date.format(date.now, '%b %d, %Y') %></h3></div-->
-				<div class="post_date"><input type="hidden" name="datepicker" id="datepicker" /><h3 id="date_alternate"></h3></div>
-				<div class="post_text" style="width:auto; min-height: 200px;"><p>Click here to edit the post!</p></div>
-				<div class="posted">Posted by <% session.username %></div>
-			</div>
-			<input type="hidden" name="title">
-			<input type="hidden" name="text" >
-			<input type="text"   name="date" -->
-		 </div>
-		 <input type=submit value="Post">
-		 </form>
+<form action="<% add_entry_url %>" method=post class="add-entry">
+<div class="post well">
+	<div style="border-style: dashed; padding-left:20px; padding-top: 20px; padding-right: 20px; border-radius: 20px;">
+		<div class="post_title"><h2 id="post_title">Click here to edit the title!</h2></div>
+		<!--input type="text" name="date" id="date" /-->
+		<!--div class="post_date"><h3><% date.format(date.now, '%b %d, %Y') %></h3></div-->
+		<div class="post_date"><input type="hidden" name="datepicker" id="datepicker" /><h3 id="date_alternate"></h3></div>
+		<div class="post_text" style="width:auto; min-height: 200px;"><p>Click here to edit the post!</p></div>
+		<div class="posted">Posted by <% session.username %></div>
+		<div class="post_tags">Comma-separeted tags</div>
 	</div>
+	<input type="hidden" name="title">
+	<input type="hidden" name="text" >
+	<input type="text"   name="date" -->
 </div>
+<input type=submit value="Post">
+</form>
 
 <script type="text/javascript">
 Aloha.ready( function() {
@@ -58,6 +60,7 @@ Aloha.ready( function() {
 	Aloha.jQuery('#post_title').aloha();
 	//Aloha.jQuery('.post_date').aloha();
 	Aloha.jQuery('.post_text').aloha();
+	Aloha.jQuery('.post_tags').aloha();
 
 });
 
@@ -85,6 +88,10 @@ $('#post_title').one('focus', function(){
 
 $('.post_text').one('focus', function(){
 	$('.post_text').html('<p style=""><br class="aloha-end-br"></p>');
+});
+
+$('.post_tags').one('focus', function(){
+	$('.post_tags').html('');
 });
 </script>
 

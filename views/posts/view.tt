@@ -1,17 +1,12 @@
-<div class="row offset2 span8">
-<a href="<% blog_url %>"><h1>PaperCut</h1></a>
-	<div class=page>
-		<div class="post well">
-	      	<h2 class="inline post_title"><a href="<% blog_url _ '/' _ post.id %>"><% post.title %></a></h2>
-			<% if session.logged_in %>
-				&nbsp;<a href="<% blog_url _ '/edit/' _ post.id %>"><i class="icon-edit"></i></a>
-			<% end %>
-			<h3 class="post_date">Jun 20, 2012</h3>
-			<div class="post_text">
-				<% post.text %>
-			</div>
-			<div class="posted">Posted by <% post.author.name %></div>
-		</div>
+<div class="post well">
+  	<h2 class="inline post_title"><a href="<% blog_url _ '/' _ post.id %>"><% post.title %></a></h2>
+	<% if session.logged_in %>
+		&nbsp;<a href="<% blog_url _ '/edit/' _ post.id %>"><i class="icon-edit"></i></a>
+	<% end %>
+	<h3 class="post_date">Jun 20, 2012</h3>
+	<div class="post_text">
+		<% post.text %>
 	</div>
+	<div class="posted">Posted by <% post.author.name %></div>
+	<div><% post.tags %></div>
 </div>
-		

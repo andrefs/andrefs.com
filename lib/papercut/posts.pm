@@ -11,6 +11,8 @@ use Try::Tiny;
 
 prefix '/posts';
 
+set layout => 'posts';
+
 hook before_template => sub {
     my $tokens = shift;
     $tokens->{'blog_url'} 	= uri_for(prefix);
@@ -19,7 +21,7 @@ hook before_template => sub {
 
 
 get '/' => sub {
-	flash info => 'This zone of my website is still under heavy development!';
+	#flash info => 'This zone of my website is still under heavy development!';
 
 	my $papercut_schema = schema 'papercut';
 	my $rs = $papercut_schema->resultset('Post')->search(undef, {

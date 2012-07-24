@@ -1,3 +1,5 @@
+PRAGMA foreign_keys = ON;
+
 create table users (
 	id integer primary key autoincrement,
 	name varchar(255) default null,
@@ -24,4 +26,16 @@ create table if not exists posts (
 	text string not null,
 	author integer references users(id),
 	visible integer default 1
+);
+
+create table if not exists tags (
+	id integer primary key autoincrement,
+	name string not null
+);
+
+create table if not exists posts_tags (
+	post_id integer,
+	tag_id integer,
+	foreign key(post_id) references posts(id) on delete cascade,
+	foreign key(tag_id)  references tags(id)  on delete cascade
 );

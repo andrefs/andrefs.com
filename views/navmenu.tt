@@ -37,7 +37,7 @@
 						</li>
 						<% ELSE %>
 						<li>
-						<a href="<% base_url _ 'posts/new' %>"><i class="icon-edit icon-large"></i> New post</a></li><li>
+						<a href="<% blog_url _ '/new' %>"><i class="icon-edit icon-large"></i> New post</a></li><li>
 						<a href="<% logout_url %>"><i class="icon-signout icon-large"></i> Log out</a>
 						</li>
 						<% END %>
