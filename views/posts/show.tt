@@ -1,13 +1,14 @@
 <div class="row offset2 span8">
-<a href="<% blog_url %>"><h1>PaperCut</h1></a>
+<h1><a href="<% blog_url %>">PaperCut</a> <a class="pull-right" href="<% blog_url %>/feed/atom"><i class="icon-rss"></i></a></h1> 
 	<div class=page>
 	  	<% IF entries.size %>
 	    	<% FOREACH post IN entries %>
 				<div class="post well">
-	      			<h2 class="inline post_title"><a href="<% blog_url _ '/' _ post.id %>"><% post.title %></a></h2>
+	      			<h2 class="inline post_title"><a href="<% blog_url _ '/' _ post.id %>"><% post.title %></a>
 					<% if session.logged_in %>
-						&nbsp;<a href="<% blog_url _ '/edit/' _ post.id %>"><i class="icon-edit"></i></a>
+						<a class="pull-right" href="<% blog_url _ '/edit/' _ post.id %>"><i class="icon-edit"></i></a>
 					<% end %>
+					</h2>
 		  			<h3 class="post_date">Jun 20, 2012</h3>
 					<div class="post_text">
 		  				<% post.text %>

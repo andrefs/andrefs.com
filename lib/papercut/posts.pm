@@ -23,7 +23,7 @@ get '/' => sub {
 
 	my $papercut_schema = schema 'papercut';
 	my $rs = $papercut_schema->resultset('Post')->search(undef, {
-		columns 	=> [qw/id title text author/ ],
+		columns 	=> [qw/id title text author visible/ ],
 		order_by	=> { -desc => qw/id/ },
 	});
 
@@ -34,7 +34,7 @@ get '/' => sub {
 			text  	=> $post->text,
 			author 	=> $post->author->name,
 			id		=> $post->id,
-		}
+		} if $post->visible;
 	}
 
     template 'posts/show.tt', {
@@ -146,7 +146,7 @@ get '/list' => sub {
 			author 	=> $post->author->name,
 			id		=> $post->id,
 			visible => $post->visible,
-		}
+		};
 	}
 
     template 'posts/list.tt', {
