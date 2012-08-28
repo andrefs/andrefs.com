@@ -86,6 +86,7 @@ post '/new' => sub {
     }
 
 	my $schema = schema 'papercut';
+	my @tags = split /\s*,\s*/, params->{'post_tags'};
 	my $rs = $schema->resultset('Post')->create({
 		title 	=> params->{'title'}, 
 		text 	=> params->{'text'},
@@ -134,6 +135,11 @@ get '/feed/:format' => sub {
 };
 
 get '/list' => sub {
+    if ( not session('logged_in') ) {
+       	flash error 	=> 'You need to be logged in!';
+    	redirect uri_for('/login');
+    }
+
 	my $papercut_schema = schema 'papercut';
 	my $rs = $papercut_schema->resultset('Post')->search(undef, {
 		columns 	=> [qw/id title text author visible/ ],

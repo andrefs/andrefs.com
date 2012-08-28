@@ -8,7 +8,7 @@ $(document).ready(function(){
 	var fileref = document.createElement('script');
 	
 	fileref.setAttribute("type","text/javascript");
-	searchURL = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name="+tweetUser+"&callback=TweetTick&count="+numTweets;
+	searchURL = "http://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&screen_name="+tweetUser+"&callback=TweetTick&count="+numTweets;
 	fileref.setAttribute("src", searchURL);
 	
 	document.getElementsByTagName("head")[0].appendChild(fileref);
