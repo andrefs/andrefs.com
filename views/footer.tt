@@ -1,7 +1,7 @@
 <div class="row">
 	<footer class="footer span8 offset2">
 		<div class="span5">
-			<p>Copyright 2012 <a href="http://andrefs.pt">andrefs</a>.
+			<p>Copyright 2012 <a href="http://andrefs.com">andrefs</a>.
 			Background pattern by <a href="http://www.styleshout.com/">StyleShout</a>.
 			<% if session.powered_by %>
 			Powered by <a href="<% session.powered_by.value %>"><% session.powered_by.text %></a>.

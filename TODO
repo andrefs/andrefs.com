@@ -5,7 +5,7 @@ FEEDS (ATOM, RSS)
 
 
 
-	appname: "andrefs.pt" &appname
+	appname: "andrefs.com" &appname
 	...
 	plugins:
 	  Feed:
