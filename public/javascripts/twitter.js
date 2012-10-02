@@ -21,15 +21,19 @@ function TweetTick(ob)
 	container.html('');
 	container.attr('title','');
 	
-	$(ob).each(function(el){
-	
-		var str = '	<div class="tweet" title="'+relativeTime(this.created_at)+'"><i class="icon-chevron-right"></i> \
-					<div class="txt">'+formatTwitString(this.text)+'</div>\
-					</div>';
-		
+	if ($(ob).length == 0){
+		var str = " Empty, huh? This is odd, I swear I've been working on stuff! Try to checkout my <a href='http://github.com/andrefs'>projects</a>&nbsp instead! ";
 		container.append(str);
-	
-	});
+	}
+	else {
+		$(ob).each(function(el){
+		
+			var str = '	<div class="tweet" title="'+relativeTime(this.created_at)+'"><i class="icon-chevron-right"></i> \
+						<div class="txt">'+formatTwitString(this.text)+'</div>\
+						</div>';
+			container.append(str);
+		});
+	}
 	
 }
 
