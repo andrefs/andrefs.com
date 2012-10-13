@@ -55,13 +55,13 @@ appmenu:
     status: disabled
   001_slide:
     text: '<i class="icon-book icon-large"></i> Publications'
-    value: http://publications.andrefs.pt
+    value: http://publications.andrefs.com
   002_grid:
     text: '<i class="icon-globe icon-large"></i> Blog'
     value: /posts
   003_grid:
     text: '<i class="icon-download icon-large"></i> CV'
-    value: http://cv.andrefs.pt
+    value: http://cv.andrefs.com
 powered_by:
   text: Dancer
   value: http://dancer.pm/
