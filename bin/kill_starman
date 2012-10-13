@@ -1,2 +1,2 @@
-sudo kill -2 $(cat /home/andrefs/public_html/andrefs.com.pid)
+kill -2 $(cat /home/andrefs/public_html/andrefs.com.pid)
 
