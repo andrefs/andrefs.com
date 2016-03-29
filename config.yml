@@ -51,8 +51,8 @@ appmenu:
   000_home:
 #    text: '<i class="icon-cogs icon-large"></i> Projects'
     text: 'Projects'
-    value: \#
-    status: disabled
+    value: http://github.com/andrefs
+    #status: disabled
   001_slide:
     text: '<i class="icon-book icon-large"></i> Publications'
     value: http://publications.andrefs.com
